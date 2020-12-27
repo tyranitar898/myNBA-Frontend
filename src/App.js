@@ -20,7 +20,7 @@ function App() {
   const [data, setData] = useState([]);
   useEffect(() => {
     const proxyurl = "https://morning-wave-56117.herokuapp.com/";
-    const url = "https://mynba-backend.herokuapp.com/GMMPred/17"; // site that doesn’t send Access-Control-*
+    const url = "https://mynba-backend.herokuapp.com/GMMPred/18"; // site that doesn’t send Access-Control-*
     fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
       .then((response) => {
         return response.json();
@@ -53,6 +53,19 @@ function App() {
           </Button>
         </p>
       </Jumbotron>
+      <Jumbotron>
+        <h4>
+          Using Gaussian Mixture Modeling, I labeled all current NBA players
+          into 18&nbsp;
+          <a href="https://scikit-learn.org/stable/modules/mixture.html">
+            Clusters
+          </a>
+          . We can attach meaning to these clusters such as Forwards and Guards
+          or more complex ones like High volume shooters or 3 and Defence role
+          players. Below each color represents a cluster.
+        </h4>
+      </Jumbotron>
+
       <NumberList numbers={data}></NumberList>
     </>
   );
