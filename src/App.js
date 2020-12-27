@@ -89,7 +89,7 @@ function App() {
           </a>{" "}
           and career RPG, APG, SPG, BPG and FG3MPG (* per game) as features, I
           attempt to capture these categories and label all current NBA players
-          into 18&nbsp;
+          into
           <a href="https://scikit-learn.org/stable/modules/mixture.html">
             Clusters
           </a>
@@ -107,8 +107,8 @@ function App() {
             }}
           >
             <Form.Label>
-              <h4>{"Gaussian Mixture Modeling with " + query + " clusters"}</h4>
-              <p>Slide to generate new clusters</p>
+              <h4>{"Gaussian Mixture Modeling with " + query + " clusters."}</h4>
+              <p>Slide to generate new clusters.</p>
             </Form.Label>
             <Form.Control min="2" max="30" defaultValue="20" type="range" />
           </Form.Group>
