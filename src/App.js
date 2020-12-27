@@ -18,6 +18,7 @@ function NumberList(props) {
 
 function App() {
   const [data, setData] = useState([]);
+  document.title = "MyNBA";
   useEffect(() => {
     const proxyurl = "https://morning-wave-56117.herokuapp.com/";
     const url = "https://mynba-backend.herokuapp.com/GMMPred/18"; // site that doesn’t send Access-Control-*
