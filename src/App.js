@@ -55,7 +55,7 @@ function App() {
       </Jumbotron>
       <Jumbotron>
         <h4>
-          Using Gaussian Mixture Modeling and career RPG, APG, SPG, BPG and FG3MPG (* per game) and  I labeled all current NBA players
+          Using Gaussian Mixture Modeling and career RPG, APG, SPG, BPG and FG3MPG (* per game) as features and  I labeled all current NBA players
           into 18&nbsp;
           <a href="https://scikit-learn.org/stable/modules/mixture.html">
             Clusters
