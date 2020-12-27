@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.GMM0 {
+  color: rgb(255, 20, 147);
+}
+.GMM1 {
+  color: #ff0000;
+}
+.GMM2 {
+  color: greenyellow;
+}
+.GMM3 {
+  color: blueviolet;
+}
+.GMM4 {
+  color: blue;
+}
+.GMM5 {
+  color: #e67213;
+}
+.GMM6 {
+  color: #66cdaa;
+}
+.GMM7 {
+  color: #191970;
+}
+.GMM8 {
+  color: rgb(123, 104, 238);
+}
+.GMM9 {
+  color: rgb(233, 104, 238);
+}
+.GMM10 {
+  color: rgb(175, 143, 25);
+}
+.GMM11 {
+  color: rgb(35, 148, 200);
+}
+.GMM12 {
+  color: rgb(12, 94, 201);
+}
+.GMM13 {
+  color: rgb(204, 64, 21);
+}
+.GMM14 {
+  color: rgb(245, 195, 14);
+}
+.GMM15 {
+  color: rgb(2, 160, 152);
+}
+.GMM16 {
+  color: rgb(83, 13, 16);
+}
