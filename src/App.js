@@ -45,7 +45,7 @@ function App() {
         <p>
           Advanced analytics gets thrown around all the time in the NBA. Man,
           WTF does that even mean!<br></br> On this app I attempt to demonstrate
-          and explain NBA analysis using Machine Learning.
+          and dive deep into NBA "advanced analytics" using Machine Learning.
         </p>
         <p>
           <Button href="https://ryanchang.online" variant="primary">
