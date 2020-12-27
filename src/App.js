@@ -1,6 +1,14 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Button, Jumbotron, Navbar, Nav, ToastHeader } from "react-bootstrap";
+import {
+  Button,
+  Jumbotron,
+  Navbar,
+  Nav,
+  Container,
+  Row,
+  Col,
+} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useEffect, useState } from "react";
 
@@ -17,20 +25,29 @@ function NumberList(props) {
 }
 
 function App() {
-  const [data, setData] = useState([]);
+  const [firstHalfData, setfirstHalfData] = useState([]);
+  const [secondHalfData, setsecondHalfData] = useState([]);
   document.title = "MyNBA";
   useEffect(() => {
     const proxyurl = "https://morning-wave-56117.herokuapp.com/";
-    const url = "https://mynba-backend.herokuapp.com/GMMPred/18"; // site that doesn’t send Access-Control-*
-    fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
+    const url = "https://mynba-backend.herokuapp.com/GMMPred/18";
+    fetch(proxyurl + url)
       .then((response) => {
         return response.json();
       })
-      .then((data) => setData(data))
+      .then((data) => {
+        const half = Math.ceil(data.length / 2);
+
+        const firstHalf = data.splice(0, half);
+        const secondHalf = data.splice(-half);
+        setfirstHalfData(firstHalf);
+        setsecondHalfData(secondHalf);
+      })
       .catch(() =>
         console.log("Can’t access " + url + " response. Blocked by browser?")
       );
   }, []);
+
   return (
     <>
       <Navbar bg="primary" variant="dark">
@@ -68,7 +85,16 @@ function App() {
         </h4>
       </Jumbotron>
       <Jumbotron>
-        <NumberList numbers={data}></NumberList>
+        <Container>
+          <Row>
+            <Col>
+              <NumberList numbers={firstHalfData}></NumberList>
+            </Col>
+            <Col>
+              <NumberList numbers={secondHalfData}></NumberList>
+            </Col>
+          </Row>
+        </Container>
       </Jumbotron>
     </>
   );
