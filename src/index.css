@@ -11,8 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.medHeader {
+  font-weight: 350;
+  font-size: 26px;
+}
 .GMM0 {
-  color: rgb(255, 20, 147);
+  color: rgb(105, 176, 241);
 }
 .GMM1 {
   color: #ff0000;
@@ -64,4 +69,40 @@ code {
 }
 .GMM17 {
   color: rgb(31, 8, 160);
+}
+.GMM18 {
+  color: rgb(35, 148, 200);
+}
+.GMM19 {
+  color: rgb(12, 94, 201);
+}
+.GMM21 {
+  color: rgb(204, 64, 21);
+}
+.GMM22 {
+  color: rgb(245, 195, 14);
+}
+.GMM23 {
+  color: rgb(2, 160, 152);
+}
+.GMM24 {
+  color: rgb(236, 6, 18);
+}
+.GMM25 {
+  color: rgb(31, 8, 160);
+}
+.GMM26 {
+  color: #26cc95;
+}
+.GMM27 {
+  color: #191970;
+}
+.GMM28 {
+  color: rgb(123, 104, 238);
+}
+.GMM29 {
+  color: rgb(233, 104, 238);
+}
+.GMM30 {
+  color: rgb(175, 139, 9);
 }
