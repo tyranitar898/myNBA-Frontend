@@ -89,7 +89,7 @@ function App() {
           </a>{" "}
           and career RPG, APG, SPG, BPG and FG3MPG (* per game) as features, I
           attempt to capture these categories and label all current NBA players
-          into
+          into{" "}
           <a href="https://scikit-learn.org/stable/modules/mixture.html">
             Clusters
           </a>
