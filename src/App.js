@@ -55,14 +55,14 @@ function App() {
       </Jumbotron>
       <Jumbotron>
         <h4>
-          Using Gaussian Mixture Modeling, I labeled all current NBA players
+          Using Gaussian Mixture Modeling and career RPG, APG, SPG, BPG and FG3MPG (* per game) and  I labeled all current NBA players
           into 18&nbsp;
           <a href="https://scikit-learn.org/stable/modules/mixture.html">
             Clusters
           </a>
-          . We can attach meaning to these clusters such as Forwards and Guards
-          or more complex ones like High volume shooters or 3 and Defence role
-          players. Below each color represents a cluster.
+          .We can attach meaning to these clusters such as Forwards and Guards
+          or more complex ones like high volume shooters or 3 and defence role
+          players or passing bigs. Below each color represents a cluster.
         </h4>
       </Jumbotron>
 
