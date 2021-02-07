@@ -85,9 +85,9 @@ function Home() {
           <a href="https://scikit-learn.org/stable/modules/mixture.html">
             Clusters
           </a>
-          . We can attach meaning to these clusters such as forwards and guards
-          or more complex ones like high volume shooters or 3 and defence role
-          players or passing bigs. Below each color represents a cluster.
+          . We can attach meaning to these clusters such as forwards or guards
+          or more complex ones like high volume shooters or 3s and defence
+          players or passing big men. Below each color represents a cluster.
         </h4>
       </Jumbotron>
       <Jumbotron>

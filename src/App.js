@@ -23,6 +23,9 @@ function App() {
           <Nav.Link href="/boxscorepredPage">
             Regression Boxscore Predict
           </Nav.Link>
+          <Nav.Link href="/boxscorepredPage">
+            Advanced defence rating
+          </Nav.Link>
         </Nav>
       </Navbar>
       
