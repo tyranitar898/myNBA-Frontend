@@ -26,10 +26,28 @@ function NumberList(props) {
   return <ul>{listItems}</ul>;
 }
 
+const similarPlayers = (playername,players) => {
+  
+  let matchingplayers = players.filter((player) => {return player.name.toLowerCase().includes(playername.toLowerCase())})
+  let matchingplayercat = -1;
+  let matchingplayername = "";
+  if (matchingplayers.length === 1){
+    matchingplayercat = matchingplayers[0].class
+    matchingplayername = matchingplayers[0].name
+  }
+  let similarplayers = players.filter((player) => {return player.class === matchingplayercat})
+  if (!similarplayers.length || similarplayers !== undefined){
+    return {similarplayers,matchingplayername}
+  }
+  
+}
+
 function Home() {
   const [firstHalfData, setfirstHalfData] = useState([]);
   const [secondHalfData, setsecondHalfData] = useState([]);
+  const [allData, setAllData] = useState([]);
   const [query, setQuery] = useState(20);
+  const [playerNameQuery, setPlayerNameQuery] = useState("Stephen Curry");
   document.title = "MyNBA";
   useEffect(() => {
     const proxyurl = "https://morning-wave-56117.herokuapp.com/";
@@ -39,17 +57,21 @@ function Home() {
         return response.json();
       })
       .then((data) => {
+        
         let half = Math.ceil(data.length / 2);
         let firstHalf = data.splice(0, half);
         let secondHalf = data.splice(-half);
         setfirstHalfData(firstHalf);
         setsecondHalfData(secondHalf);
+        setAllData(firstHalf.concat(secondHalf));
       })
       .catch(() =>
         console.log("Can’t access " + url + " response. Blocked by browser?")
       );
   }, [query]);
-
+  
+  const {similarplayers,matchingplayername} = similarPlayers(playerNameQuery,allData)
+  
   return (
     <>
       
@@ -91,6 +113,34 @@ function Home() {
         </h4>
       </Jumbotron>
       <Jumbotron>
+        <Container>
+            <Row>
+              <Col>
+              <h3>Search for similar players</h3>
+              <p></p>
+              <Form.Control
+                className="mb-3"
+                vaue={playerNameQuery}
+                onInput={e => setPlayerNameQuery(e.target.value)}
+                placeholder={playerNameQuery ? playerNameQuery : "Enter a player name"}
+                />
+              <Form.Text className="text-muted">
+                try your favourite player
+              </Form.Text>
+              
+              </Col>
+              <Col>
+                <h4>{"Found: "+ matchingplayername}</h4>
+                <NumberList numbers={similarplayers}></NumberList>
+              </Col>
+            </Row>
+          </Container>
+        
+      </Jumbotron>
+
+      <Jumbotron>
+        <h3>{"Similar players grouped by color"}</h3>
+        <h6 color={"grey"}>{"\"Similarity\" generated with Gaussian Mixture Modeling with " + query + " clusters."}</h6>
         <Form>
           <Form.Group
             controlId="formBasicRange"
@@ -98,13 +148,15 @@ function Home() {
               setQuery(event.target.value);
             }}
           >
+            
             <Form.Label>
-              <h4>{"Gaussian Mixture Modeling with " + query + " clusters."}</h4>
+              
               <p>Slide to generate new clusters.</p>
             </Form.Label>
             <Form.Control min="2" max="30" defaultValue="20" type="range" />
           </Form.Group>
         </Form>
+        
         <Container>
           <Row>
             <Col>
