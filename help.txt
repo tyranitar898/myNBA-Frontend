@@ -1,0 +1,2 @@
+for dev.
+to update. use "git push heroku main"
